@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="content-main">
+<div class="module">
+<h4>Order Details</h4>
+          <table class="table table-overview">
+           <tr style="text-align:center; color:purple;  height:30px">
+               <td>Order Number</td>
+               <th style="text-align:center">Vendor</th>
+               <th style="text-align:center">Inventory</th>
+               <th style="text-align:center">description</th>
+           </tr>
+                <tr>
+                <th>{{ order.order_number }}</th>
+                <td>{{ order.vendor_id }}</td>
+                <td>{{ order.inventory_id }}</td>
+                <td>{{ order.purpose }}</td>
+                </tr>
+          </table>
+<div class="mt-2"></div>
+<h4>Item Details</h4>
+    <table class="table table-overview">
+           <tr style="color:purple; text-align:center; height:30px">
+               <td>Sl</td>
+               <th>Product</th>
+               <th>Quantity</th>
+               <th>MRP</th>
+           </tr>
+              {% for row in order.order.all %}
+              <tr style="text-align:center">
+              <td>{{ forloop.counter }}</td>
+              <td>{{ row.product_id }}</td>
+              <td>{{ row.quantity }}</td>
+              <td>{{ row.mrp }}</td>
+              </tr>
+              {% endfor %}
+
+          </table>
+        </div>
+<a class="my-2 mx-1 btn btn-sm btn-success" href="{% url "order_index" %}">Back to List</a>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container-xl">
+        <div style="display:flex">
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <h2 class="page-title">
+                            Confirm ot Mark {{ order.order_number }} as {{ status_text }}?
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <a class="ml-auto my-2 btn btn-primary" href="{% url "order_index" %}">Order List</a>
+        </div>
+        <div class="box">
+            <div class="card">
+                <div class="content">
+                    <form method="post" class="ml-3">
+                        <style>
+                            li{
+                                margin-top: 15px;
+                                margin-bottom: 15px;
+                            }
+                            input{
+                                margin-left: 10px;
+                            }
+                        </style>
+                        {% csrf_token %}
+                        Are you sure to {{ status_text }}? <br>
+                        <button class="btn btn-danger" type="submit">Mark {{ status_text }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

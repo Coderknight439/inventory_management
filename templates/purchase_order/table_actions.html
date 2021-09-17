@@ -1,0 +1,6 @@
+<div>
+    <a class="mx-1 btn btn-sm btn-light view" href="{% url "view_order" order_id=record.id %}">View</a>
+    <a class="mx-1 btn btn-sm btn-primary pending" href="{% url "pending_order" order_id=record.id %}">Pending</a>
+    <a class="mx-1 btn btn-sm btn-secondary complete" href="{% url "complete_order" order_id=record.id %}">Complete</a>
+    <a class="mx-1 btn btn-sm btn-danger reject" href="{% url "reject_order" order_id=record.id %}">Reject</a>
+</div>

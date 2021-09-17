@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'vendor.apps.VendorConfig',
     'inventory_journals.apps.InventoryJournalsConfig',
     'purchase_orders.apps.PurchaseOrdersConfig',
+    'django_tables2',
+    'bootstrap4',
+
 ]
 
 MIDDLEWARE = [
@@ -68,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'context_processor.default_context_data'
             ],
         },
     },
@@ -128,8 +132,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'

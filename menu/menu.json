@@ -1,0 +1,57 @@
+{
+  "name": "IMS",
+  "main_menu": [
+    {
+      "label": "Products",
+      "submenu": [
+        {
+          "label": "Product List",
+          "url": "/products/"
+        },
+        {
+          "label": "Add Product",
+          "url": "/products/add/"
+        }
+      ]
+    },
+    {
+      "label": "Vendors",
+      "submenu": [
+        {
+          "label": "Vendor List",
+          "url": "/vendors/"
+        },
+        {
+          "label": "Add Vendor",
+          "url": "/vendors/add/"
+        }
+      ]
+    },
+    {
+      "label": "Inventories",
+      "submenu": [
+        {
+          "label": "Inventory List",
+          "url": "/inventories/"
+        },
+        {
+          "label": "Add Inventory",
+          "url": "/inventories/add/"
+        }
+      ]
+    },
+    {
+      "label": "Purchase Orders",
+      "submenu": [
+        {
+          "label": "Purchase Order List",
+          "url": "/purchase_order/"
+        },
+        {
+          "label": "Add Purchase Order",
+          "url": "/purchase_order/add/"
+        }
+      ]
+    }
+  ]
+}

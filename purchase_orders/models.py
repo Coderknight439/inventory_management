@@ -55,7 +55,7 @@ class PurchaseOrder(models.Model):
 class OrderItems(models.Model):
     product_id = models.ForeignKey(Product, on_delete=models.PROTECT)
     product_name = models.CharField(max_length=256, verbose_name='Product')
-    purchase_id = models.ForeignKey(PurchaseOrder, on_delete=models.CASCADE)
+    purchase_id = models.ForeignKey(PurchaseOrder, on_delete=models.CASCADE, related_name='order')
     quantity = models.IntegerField(default=1)
     mrp = models.DecimalField(max_digits=15, decimal_places=4)
 

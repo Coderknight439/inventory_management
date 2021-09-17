@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Number of Products</h5>
+                    <p class="card-text">Currently you have {{ product_count }} products in your system.</p>
+                    <a href="{% url 'product_index' %}" class="btn btn-primary">Product List</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Number of Inventories</h5>
+                    <p class="card-text">Currently you have {{ inventory_count }} inventories in your system.</p>
+                    <a href="{% url 'inventory_index' %}" class="btn btn-primary">Inventory List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Number of Vendors</h5>
+                    <p class="card-text">Currently you have {{ vendor_count }} vendors in your system.</p>
+                    <a href="{% url 'vendor_index' %}" class="btn btn-primary">Vendor List</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Number of Orders</h5>
+                    <p class="card-text">You have got total {{ product_count }} order in your system.</p>
+                    <a href="#" class="btn btn-primary">Order List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

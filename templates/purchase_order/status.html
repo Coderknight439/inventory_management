@@ -1,0 +1,13 @@
+
+    {% if record.status == 0 %}
+    <span class="fa fa-circle text-info" data-toggle="tooltip" data-placement="top" title="Pending"></span>
+    {% elif record.status == 1 %}
+        <span class="fa fa-circle text-success" data-toggle="tooltip" data-placement="top" title="Complete"></span>
+    {% else %}
+    <span class="fa fa-circle text-danger" data-toggle="tooltip" data-placement="top" title="Reject"></span>
+    {% endif %}
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
